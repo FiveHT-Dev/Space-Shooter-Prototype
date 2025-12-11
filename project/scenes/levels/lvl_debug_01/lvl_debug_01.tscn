@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://j1fihcfi6xx8"]
+
+[ext_resource type="PackedScene" uid="uid://d2w1x18ibkhtw" path="res://common/prefabs/level/level.tscn" id="1_5gdy8"]
+
+[node name="LvlDebug01" instance=ExtResource("1_5gdy8")]
+_lvlFolderPathFromEditor = "lvl_debug_01"
+_lvlFileNameFromEditor = "lvl_debug_01"

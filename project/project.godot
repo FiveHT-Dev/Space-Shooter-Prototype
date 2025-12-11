@@ -11,9 +11,15 @@ config_version=5
 [application]
 
 config/name="SpaceShooterPrototype"
-config/features=PackedStringArray("4.5", "Mobile")
-config/icon="res://icon.svg"
 config/tags=PackedStringArray("prototype")
+run/main_scene="uid://j1fihcfi6xx8"
+config/features=PackedStringArray("4.5", "C#", "Mobile")
+config/icon="res://icon.svg"
+
+[autoload]
+
+DirectoryManager="*res://autoload/DirectoryManager.cs"
+Resources="*res://autoload/Resources.cs"
 
 [dotnet]
 

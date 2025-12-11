@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2w1x18ibkhtw"]
+
+[ext_resource type="Script" uid="uid://bnybd4mnm00ce" path="res://common/prefabs/level/Level.cs" id="1_cqx2u"]
+
+[node name="Level" type="Node3D"]
+script = ExtResource("1_cqx2u")

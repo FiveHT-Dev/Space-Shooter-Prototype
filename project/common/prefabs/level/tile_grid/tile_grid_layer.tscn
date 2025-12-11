@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bc32osei66oly"]
+
+[ext_resource type="Script" uid="uid://b00bsle7p8trw" path="res://common/prefabs/level/tile_grid/TileGridLayer.cs" id="1_otx6q"]
+
+[node name="TileGridLayer" type="Node3D"]
+script = ExtResource("1_otx6q")
