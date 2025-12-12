@@ -8,20 +8,13 @@ namespace SpaceShooterPrototype.Level
 	{
 		private Dictionary<Vector2I, TileGridChunk> _chunks = new();
 
-		public void TryCreateChunk(Vector2I pos, string chunkColor, string nPosXColor, string nNegXColor, string nPosYColor, string nNegYColor)
+		public void TryCreateChunk(TileGridChunkCreationArgs chunkCreationArgs)
 		{
-			if(chunkColor != "000000")
+			if(chunkCreationArgs.Color != "000000")
 			{
-				TileGridChunk chunk = new TileGridChunk();
+				TileGridChunk chunk = new TileGridMCChunk();
 				AddChild(chunk);
-				chunk.Create(pos);
-
-				MeshInstance3D meshInstance = new MeshInstance3D();
-				chunk.AddChild(meshInstance);
-				meshInstance.Mesh = new BoxMesh();
-				StandardMaterial3D mat = new StandardMaterial3D();
-				mat.AlbedoColor = new Color(chunkColor);
-				meshInstance.SetSurfaceOverrideMaterial(0, mat);
+				chunk.Create(chunkCreationArgs);
 			}
 		}
 		

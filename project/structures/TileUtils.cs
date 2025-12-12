@@ -33,4 +33,26 @@ namespace SpaceShooterPrototype.Level
             }
         }
     }
+
+    public class TileGridChunkCreationArgs
+    {
+        public Image ScaledTileMapImage {get; private set;}
+        public Vector3 GlobalPosition {get; private set;}
+        public string Color {get; private set;}
+        public string NPosXColor {get; private set;}
+        public string NNegXColor {get; private set;}
+        public string NPosYColor {get; private set;}
+        public string NNegYColor {get; private set;}
+
+        public TileGridChunkCreationArgs(string color, Image scaledTileMapImage, Vector3 globalPosition, string nPosXColor, string nNegXColor, string nPosYColor, string nNegYColor)
+        {
+            Color = color;
+            ScaledTileMapImage = scaledTileMapImage;
+            GlobalPosition = globalPosition;
+            NPosXColor = nPosXColor;
+            NNegXColor = nNegXColor;
+            NPosYColor = nPosYColor;
+            NNegYColor = nNegYColor;
+        }
+    }
 }

@@ -18,6 +18,7 @@ namespace SpaceShooterPrototype.Level
 		private bool _dataLoaded = false;
 		private string _levelName;
 		private Image _tileMapImage;
+		private Image _scaledTileMapImage;
 		private TileGrid _tileGrid;
 
 		public override void _Ready()
@@ -44,6 +45,12 @@ namespace SpaceShooterPrototype.Level
 				else if(fileName.EndsWith("bmp") && fileName.StartsWith("tlmp"))
                 {
                     _tileMapImage = Image.LoadFromFile(sanitizedFile);
+					_scaledTileMapImage = Image.LoadFromFile(sanitizedFile);
+					_scaledTileMapImage.Resize(
+						_scaledTileMapImage.GetWidth() * TileGridMCChunk.CHUNK_SIZE,
+						_scaledTileMapImage.GetHeight() * TileGridMCChunk.CHUNK_SIZE,
+						Image.Interpolation.Nearest
+						);
                     tileMapLoaded = true;
                 }
             }
@@ -61,7 +68,7 @@ namespace SpaceShooterPrototype.Level
                 {
                     _tileGrid = new TileGrid();
                     AddChild(_tileGrid);
-                    _tileGrid.Create(_tileMapImage);
+                    _tileGrid.Create(_tileMapImage, _scaledTileMapImage);
                     _created = true;
                 }
                 
